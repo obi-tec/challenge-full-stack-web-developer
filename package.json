@@ -1,0 +1,8 @@
+{
+  "name": "challenge-full-stack-web-developer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AndrewReis/challenge-full-stack-web-developer.git",
+  "author": "AndrewReis <andrew-reiis@outlook.com>",
+  "license": "MIT"
+}
