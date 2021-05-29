@@ -5,6 +5,9 @@
   "username": "docker",
   "password": "docker",
   "database": "fullStack",
+  "entities": [
+    "./src/modules/users/entities/*.ts"
+  ],
   "migrations": [
     "./src/database/migrations/*.ts"
   ],
