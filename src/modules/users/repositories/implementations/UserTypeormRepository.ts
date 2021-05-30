@@ -1,5 +1,6 @@
 import { getRepository, Repository } from "typeorm";
 import { CreateUserDTO } from "../../dtos/CreateUser";
+import { UpdateUserDTO } from "../../dtos/UpdateUserDTO";
 import { User } from "../../entities/User";
 import { IUserRepository } from "../IUserRepository";
 
@@ -22,6 +23,11 @@ class UserTypeormRepository implements IUserRepository {
 
     return user;
   };
+
+  public async update(data: UpdateUserDTO): Promise<User> {
+    const updateUser = await this.ormRepository.save(data);
+    return updateUser;
+  }
 
   //Find User methods.
   public async findByUUID(uuid: string): Promise<User | undefined> {
