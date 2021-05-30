@@ -1,3 +1,4 @@
+import { validate } from "uuid";
 import { CreateUserDTO } from "../dtos/CreateUser";
 import { IUserRepository } from "../repositories/IUserRepository";
 
@@ -10,6 +11,17 @@ class CreateUserService {
   }
 
   public async execute({ uuid, name, email, phone, city, uf }: CreateUserDTO) {
+    const isUUID = validate(uuid);
+
+    if (!isUUID) {
+      throw new Error('Invalid syntax UUID');
+    }
+
+    const uuidAlreadyExist = await this.userRepository.findByUUID(uuid);
+
+    if (uuidAlreadyExist) {
+      throw new Error('UUID already exist.');
+    }
 
     const emailAlreadyExist = await this.userRepository.findByEmail(email);
 
@@ -22,12 +34,6 @@ class CreateUserService {
     if (phoneAlreadyExist) {
       throw new Error('Telephone already exist.');
     };
-
-    const uuidAlreadyExist = await this.userRepository.findByUUID(uuid);
-
-    if (uuidAlreadyExist) {
-      throw new Error('UUID already exist.');
-    }
 
     const user = await this.userRepository.create({
       uuid,

@@ -24,6 +24,10 @@ class UserTypeormRepository implements IUserRepository {
     return user;
   };
 
+  public async delete(uuid: string): Promise<void> {
+    await this.ormRepository.delete(uuid)
+  }
+
   public async update(data: UpdateUserDTO): Promise<User> {
     const updateUser = await this.ormRepository.save(data);
     return updateUser;

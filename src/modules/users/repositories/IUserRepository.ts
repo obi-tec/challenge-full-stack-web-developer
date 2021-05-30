@@ -5,6 +5,7 @@ import { UpdateUserDTO } from "../dtos/UpdateUserDTO";
 interface IUserRepository {
   create(data: CreateUserDTO): Promise<User>;
   listAll(): Promise<User[]>;
+  delete(uuid: string): Promise<void>;
   update(data: UpdateUserDTO): Promise<User>;
 
   //Find User methods.
