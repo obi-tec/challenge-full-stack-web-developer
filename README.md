@@ -9,7 +9,7 @@ As regras e os requisitos técnicos estão detalhadas abaixo, boa sorte!
 _Time Obi.Tec_
 # Especificações Técnicas
 - **Front End:** [Vue.js](https://vuejs.org)
-- **UI Framework**:  [Vuetifyjs](https://vuetifyjs.com/en)  ou [Bootstrap](https://bootstrap-vue.org)
+- **UI Framework**:  [Vuetifyjs](https://vuetifyjs.com/en), ou [Bootstrap](https://bootstrap-vue.org), ou [Primevue](https://primevue.org)
 - **API:** NodeJS
 - **Banco de Dados:** PostgreSQL, MySQL ou MongoDB
 - **Idioma de escrita do código:** Inglês
